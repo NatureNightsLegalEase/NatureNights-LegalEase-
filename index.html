@@ -38,6 +38,12 @@
             text-align: center;
             padding: 20px;
             border-top: 2px solid gold;
+            font-size: 14px;
+        }
+        .footer-extra {
+            margin-top: 10px;
+            color: #ccc;
+            font-size: 13px;
         }
         a {
             color: gold;
@@ -61,6 +67,18 @@
             color: black;
             cursor: pointer;
         }
+        .contact-btn {
+            background-color: gold;
+            color: black;
+            padding: 12px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .contact-btn:hover {
+            background-color: #e6c200;
+        }
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -80,6 +98,7 @@
     </style>
 </head>
 <body>
+
     <header>
         <img src="logo.jpg" alt="NatureNights LegalEase Logo">
         <h1>NatureNights LegalEase</h1>
@@ -89,7 +108,9 @@
     <section id="about">
         <h2>About Us</h2>
         <p>
-            NatureNights LegalEase is a professional legal platform founded by passionate law students and experienced High Court Advocates. We specialize in offering modern legal solutions with a special focus on cybercrime, business registration, family and criminal law, service matters, taxation, and property disputes. Our vision is to make legal help accessible, reliable, and simplified.
+            NatureNights LegalEase is a professional legal platform founded by passionate law students and experienced High Court Advocates. 
+            We specialize in offering modern legal solutions with a special focus on cybercrime, business registration, family and criminal 
+            law, service matters, taxation, and property disputes.
         </p>
     </section>
 
@@ -129,7 +150,8 @@
 
     <section id="appointment">
         <h2>Book an Appointment</h2>
-        <form action="mailto:naturenightslegalease@gmail.com" method="post" enctype="text/plain">
+        <!-- REDIRECTS DIRECTLY TO WHATSAPP -->
+        <form action="https://wa.me/923326811085" method="get" target="_blank">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -140,9 +162,9 @@
             <input type="text" id="phone" name="phone">
 
             <label for="message">Message / Concern:</label>
-            <textarea id="message" name="message" rows="5"></textarea>
+            <textarea id="message" name="text" rows="5" placeholder="Your message will be sent on WhatsApp"></textarea>
 
-            <input type="submit" value="Send Appointment Request">
+            <input type="submit" value="Contact on WhatsApp">
         </form>
     </section>
 
@@ -151,14 +173,16 @@
         <p>Email: <a href="mailto:naturenightslegalease@gmail.com">naturenightslegalease@gmail.com</a></p>
         <p>Phone 1: <a href="https://wa.me/923326811085" target="_blank">+92 332 6811085 (WhatsApp)</a></p>
         <p>Phone 2: <a href="https://wa.me/923116196789" target="_blank">+92 311 6196789 (WhatsApp)</a></p>
+
+        <a class="contact-btn" href="https://wa.me/923326811085" target="_blank">Chat with Us on WhatsApp</a>
     </section>
 
     <footer>
         <p>&copy; 2025 NatureNights LegalEase. All rights reserved.</p>
+        <div class="footer-extra">Proudly located in Pakistan | Support Palestine 🇵🇸</div>
     </footer>
 
-    <a href="https://wa.me/923326811085" class="whatsapp-button" title="Chat on WhatsApp">
-        💬
-    </a>
+    <a href="https://wa.me/923326811085" class="whatsapp-button" title="Chat on WhatsApp">💬</a>
+
 </body>
 </html>

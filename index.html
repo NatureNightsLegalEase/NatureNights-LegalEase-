@@ -1,177 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nimshay Bareen | Official Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatureNights LegalEase</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: #fafafa;
-        color: #222;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #000;
+            color: #fff;
+        }
 
-    header {
-        background: linear-gradient(135deg, #6741ff, #a876ff);
-        padding: 60px 20px;
-        text-align: center;
-        color: white;
-    }
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, #0d0d0d, #1b1b1b);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid gold;
+        }
+        header img {
+            height: 110px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            color: gold;
+            letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
+        }
 
-    header h1 {
-        font-size: 48px;
-        margin: 0;
-        font-weight: 700;
-    }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px gold; }
+            to { text-shadow: 0 0 25px gold; }
+        }
 
-    header p {
-        font-size: 18px;
-        opacity: 0.9;
-    }
+        /* SECTIONS */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            color: gold;
+            border-left: 5px solid gold;
+            padding-left: 10px;
+            font-size: 28px;
+        }
 
-    /* Buttons */
-    .btn {
-        display: inline-block;
-        background: #6b46ff;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 30px;
-        font-size: 16px;
-        margin-top: 20px;
-        text-decoration: none;
-        transition: 0.3s;
-    }
+        /* TEAM CARDS */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-    .btn:hover {
-        background: #4f28d4;
-    }
+        .team-card {
+            background: #111;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+            transition: .3s;
+        }
 
-    /* About Section */
-    section {
-        padding: 40px 20px;
-        max-width: 900px;
-        margin: auto;
-    }
+        .team-card:hover {
+            transform: translateY(-6px);
+            border-color: gold;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+        }
 
-    h2 {
-        color: #4f28d4;
-        text-align: center;
-        font-size: 32px;
-        margin-bottom: 20px;
-    }
+        .team-card h3 {
+            margin: 0;
+            color: gold;
+        }
 
-    p {
-        text-align: center;
-        line-height: 1.7;
-        font-size: 17px;
-    }
+        /* FORM */
+        form {
+            background: #111;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid gold;
+            margin-top: 20px;
+        }
 
-    /* Reviews */
-    .reviews {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-    }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #000;
+            color: white;
+        }
 
-    .review-box {
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-    }
+        input[type="submit"] {
+            margin-top: 20px;
+            background: gold;
+            color: #000;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 14px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: .3s;
+        }
+        input[type="submit"]:hover {
+            background: #e6c200;
+        }
 
-    .review-box h3 {
-        margin: 0;
-        font-size: 20px;
-        color: #4f28d4;
-    }
+        /* CONTACT BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 18px;
+            border-radius: 50%;
+            font-size: 26px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.6);
+            transition: .3s;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.15);
+            background-color: #1ebe5b;
+        }
 
-    .review-box p {
-        margin-top: 10px;
-        font-size: 15px;
-        color: #555;
-        text-align: left;
-    }
-
-    /* Footer */
-    footer {
-        text-align: center;
-        padding: 15px;
-        margin-top: 40px;
-        background: #eee;
-        color: #444;
-        font-size: 14px;
-    }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #25d366;
-        color: white;
-        padding: 15px 18px;
-        border-radius: 50%;
-        font-size: 22px;
-        text-decoration: none;
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-    }
-</style>
+        /* FOOTER */
+        footer {
+            background: #0e0e0e;
+            text-align: center;
+            padding: 25px;
+            border-top: 2px solid gold;
+            margin-top: 40px;
+        }
+        .footer-extra {
+            margin-top: 6px;
+            color: #ccc;
+            font-size: 14px;
+        }
+    </style>
 
 </head>
 <body>
 
-<header>
-    <h1>Nimshay Bareen</h1>
-    <p>Official Personal Website</p>
-    <a class="btn" href="https://wa.me/923000000000?text=Hi%20I%20want%20to%20book%20an%20appointment">
-        Book an Appointment
-    </a>
-</header>
+    <header>
+        <img src="logo.jpg" alt="Logo">
+        <h1>NatureNights LegalEase</h1>
+        <p style="color:#ccc;">Premium Legal Solutions in Pakistan</p>
+    </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        Welcome to my official website. I create helpful resources, guides, and creative content —
-        combining knowledge with creativity to help and inspire others.
-    </p>
-</section>
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            NatureNights LegalEase is a modern legal platform combining young legal minds with experienced High Court Advocates.
+            We provide legal consultancy for cybercrime, business registration, criminal & family law, service matters,
+            taxation, and property disputes.
+        </p>
+    </section>
 
-<section>
-    <h2>Reviews</h2>
+    <!-- TEAM -->
+    <section id="team">
+        <h2>Our Team</h2>
 
-    <div class="reviews">
-        <div class="review-box">
-            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-            <p>"The most professional and humble person. Highly recommended!"</p>
-            <p><b>- Ayesha</b></p>
+        <div class="team-grid">
+
+            <div class="team-card">
+                <h3>Malik Jaidad Yousaf (Advocate High Court)</h3>
+                <p>Cybercrime, Criminal, Family, Online Frauds</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Syed Arslan Tariq (Advocate High Court, IHC)</h3>
+                <p>Service Matters Specialist</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Syed Asim Naqvi (Advocate High Court)</h3>
+                <p>Civil, Property & Legal Damages</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Malik Anayat Ullah Saivra (Advocate High Court)</h3>
+                <p>Taxation, Corporate & Company Registration</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Nimshay Bareen</h3>
+                <p>Cybercrime, Filer & Business Registrations</p>
+            </div>
+
+            <div class="team-card">
+                <h3>Nasar Mehmood</h3>
+                <p>Marketing Director | Computer Engineer</p>
+            </div>
+
         </div>
+    </section>
 
-        <div class="review-box">
-            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-            <p>"Helpful, knowledgeable, and always quick to respond. Loved the experience!"</p>
-            <p><b>- Fatima</b></p>
-        </div>
+    <!-- APPOINTMENT -->
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
 
-        <div class="review-box">
-            <h3>⭐️⭐️⭐️⭐️⭐️</h3>
-            <p>"Such a positive personality! Excellent guidance and support."</p>
-            <p><b>- Sana</b></p>
-        </div>
-    </div>
-</section>
+        <!-- WhatsApp Redirect Form -->
+        <form action="https://wa.me/923326811085" method="get" target="_blank">
+            <label>Name:</label>
+            <input type="text" name="name" required>
 
-<footer>
-    Proudly located in Pakistan | Support Palestine 🇵🇸
-</footer>
+            <label>Email:</label>
+            <input type="email" name="email" required>
 
-<!-- Floating WhatsApp Button -->
-<a class="whatsapp-float" href="https://wa.me/923000000000">
-    ☎
-</a>
+            <label>Phone:</label>
+            <input type="text" name="phone">
+
+            <label>Your Message:</label>
+            <textarea name="text" rows="5" placeholder="Your message will be sent to WhatsApp"></textarea>
+
+            <input type="submit" value="Send on WhatsApp">
+        </form>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:naturenightslegalease@gmail.com">naturenightslegalease@gmail.com</a></p>
+        <p>WhatsApp 1: +92 332 6811085</p>
+        <p>WhatsApp 2: +92 311 6196789</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 NatureNights LegalEase. All rights reserved.</p>
+        <div class="footer-extra">Proudly located in Pakistan | Support Palestine 🇵🇸</div>
+    </footer>
+
+    <a href="https://wa.me/923326811085" class="whatsapp-button">💬</a>
 
 </body>
 </html>

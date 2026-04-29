@@ -643,7 +643,7 @@
         <label>Your Message</label>
         <textarea id="f-msg" placeholder="Briefly describe your legal matter..."></textarea>
       </div>
-      <button class="form-submit" onclick="sendToWhatsApp()">Send via WhatsApp →</button>
+      <button class="form-submit" id="wa-send-btn" type="button">Send via WhatsApp →</button>
     </div>
   </div>
 </section>
@@ -675,5 +675,38 @@
   </svg>
 </a>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('wa-send-btn');
+  if (!btn) return;
+
+  btn.addEventListener('click', function() {
+    var name   = (document.getElementById('f-name').value || '').trim();
+    var phone  = (document.getElementById('f-phone').value || '').trim();
+    var email  = (document.getElementById('f-email').value || '').trim();
+    var matter = (document.getElementById('f-matter').value || '').trim();
+    var msg    = (document.getElementById('f-msg').value || '').trim();
+
+    if (!name) {
+      alert('Apna naam likhen.');
+      return;
+    }
+    if (!matter) {
+      alert('Legal matter select karein.');
+      return;
+    }
+
+    var text = '*NatureNights LegalEase - Consultation Request*\n\n';
+    text += 'Name: ' + name + '\n';
+    if (phone)  text += 'Phone: ' + phone + '\n';
+    if (email)  text += 'Email: ' + email + '\n';
+    text += 'Legal Matter: ' + matter + '\n';
+    if (msg)    text += '\nDetails:\n' + msg;
+
+    var waURL = 'https://wa.me/923326811085?text=' + encodeURIComponent(text);
+    window.location.href = waURL;
+  });
+});
+</script>
 </body>
 </html>
